@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import me.cpele.myapplication.R
+import me.cpele.myapplication.databinding.MainFragmentBinding
 
 class MainFragment : Fragment() {
 
@@ -23,8 +24,12 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val binding = MainFragmentBinding.bind(view)
+        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        binding.viewModel = viewModel
+    }
 }
