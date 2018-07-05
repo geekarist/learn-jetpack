@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.main_fragment.*
 import me.cpele.myapplication.R
 
@@ -38,5 +39,10 @@ class MainFragment : Fragment() {
                 viewModel.name.postValue(getString(R.string.hello, p0))
             }
         })
+
+        mainNext.setOnClickListener {
+            val navController = Navigation.findNavController(view)
+            navController.navigate(R.id.main_action_next)
+        }
     }
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainFragment"
+    >
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:label="main_fragment"
+        android:name="me.cpele.myapplication.ui.main.MainFragment"
+        tools:layout="@layout/main_fragment"
+        >
+
+        <action
+            android:id="@+id/main_action_next"
+            app:destination="@id/displayDateFragment"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/displayDateFragment"
+        android:label="fragment_display_date"
+        android:name="me.cpele.myapplication.DisplayDateFragment"
+        tools:layout="@layout/fragment_display_date"
+        />
+
+</navigation>
