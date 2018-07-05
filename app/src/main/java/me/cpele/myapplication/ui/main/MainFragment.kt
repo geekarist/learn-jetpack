@@ -40,9 +40,6 @@ class MainFragment : Fragment() {
             }
         })
 
-        mainNext.setOnClickListener {
-            val navController = Navigation.findNavController(view)
-            navController.navigate(R.id.main_action_next)
-        }
+        mainNext.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.main_action_next))
     }
 }
