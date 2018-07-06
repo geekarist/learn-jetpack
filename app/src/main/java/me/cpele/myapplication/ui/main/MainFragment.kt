@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.main_fragment.*
 import me.cpele.myapplication.R
+import me.cpele.myapplication.R.id.*
 
 class MainFragment : Fragment() {
 
