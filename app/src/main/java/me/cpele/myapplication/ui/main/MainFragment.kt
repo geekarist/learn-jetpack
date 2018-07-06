@@ -13,7 +13,6 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.main_fragment.*
 import me.cpele.myapplication.R
-import me.cpele.myapplication.R.id.*
 
 class MainFragment : Fragment() {
 
@@ -42,9 +41,11 @@ class MainFragment : Fragment() {
             }
         })
 
-        mainNext.setOnClickListener(Navigation.createNavigateOnClickListener(
-                R.id.main_action_next,
-                bundleOf("name" to viewModel.name.value)
-        ))
+        mainNext.setOnClickListener {
+            Navigation.findNavController(view).navigate(
+                    R.id.main_action_next,
+                    bundleOf("name" to viewModel.name.value)
+            )
+        }
     }
 }
