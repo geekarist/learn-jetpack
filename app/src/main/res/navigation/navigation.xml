@@ -26,6 +26,11 @@
         android:label="fragment_display_date"
         android:name="me.cpele.myapplication.DisplayDateFragment"
         tools:layout="@layout/fragment_display_date"
-        />
+        >
+        <argument
+            android:name="name"
+            app:type="string"
+            />
+    </fragment>
 
 </navigation>

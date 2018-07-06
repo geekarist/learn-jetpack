@@ -1,9 +1,11 @@
 package me.cpele.myapplication
 
 import android.os.Bundle
+import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,7 +21,16 @@ class MainActivity : AppCompatActivity() {
             val isHome = controller.graph.startDestination == destination.id
             supportActionBar?.setDisplayHomeAsUpEnabled(!isHome)
         }
+
+        setupActionBarWithNavController(this, navController)
     }
 
     override fun onSupportNavigateUp(): Boolean = navController.navigateUp()
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+        menuInflater?.inflate(R.menu.menu_main, menu)
+        return true
+    }
 }

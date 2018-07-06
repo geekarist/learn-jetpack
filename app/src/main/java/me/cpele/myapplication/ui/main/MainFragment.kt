@@ -6,6 +6,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -30,16 +31,19 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
-        viewModel.name.observe(this, Observer { mainMessage.text = it })
+        viewModel.name.observe(this, Observer { mainMessage.text = getString(R.string.hello, it) })
 
         mainQuestionName.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) = Unit
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) = Unit
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                viewModel.name.postValue(getString(R.string.hello, p0))
+                viewModel.name.postValue(p0.toString())
             }
         })
 
-        mainNext.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.main_action_next))
+        mainNext.setOnClickListener(Navigation.createNavigateOnClickListener(
+                R.id.main_action_next,
+                bundleOf("name" to viewModel.name.value)
+        ))
     }
 }
