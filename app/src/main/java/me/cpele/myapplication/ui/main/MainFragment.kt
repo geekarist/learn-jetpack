@@ -41,9 +41,9 @@ class MainFragment : Fragment() {
         })
 
         mainNext.setOnClickListener {
-            Navigation.findNavController(view).navigate(
-                    MainFragmentDirections.MainActionNext().setName(viewModel.name.value)
-            )
+            Navigation.findNavController(view).navigate(viewModel.nextDirection())
         }
+
+        mainRadioGroup.setOnCheckedChangeListener { _, checkedId -> viewModel.checkedId = checkedId }
     }
 }

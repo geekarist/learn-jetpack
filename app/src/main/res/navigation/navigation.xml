@@ -15,12 +15,12 @@
         >
 
         <action
-            android:id="@+id/mainActionNext"
+            android:id="@+id/mainActionNextDate"
             app:destination="@+id/displayDateFragment"
             />
 
         <action
-            android:id="@+id/action_mainFragment_to_displayOneFragment"
+            android:id="@+id/mainActionNextOne"
             app:destination="@id/displayOneFragment"
             />
 
