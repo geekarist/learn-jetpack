@@ -21,7 +21,7 @@
 
         <action
             android:id="@+id/mainActionNextOne"
-            app:destination="@id/displayOneFragment"
+            app:destination="@id/displayNumbers"
             />
 
     </fragment>
@@ -41,35 +41,42 @@
 
     </fragment>
 
-    <fragment
-        android:id="@+id/displayOneFragment"
-        android:label="fragment_display_one"
-        android:name="me.cpele.myapplication.DisplayOneFragment"
-        tools:layout="@layout/fragment_display_one"
+    <navigation
+        android:id="@+id/displayNumbers"
+        app:startDestination="@id/displayOneFragment"
         >
-        <action
-            android:id="@+id/action_displayOneNext"
-            app:destination="@id/displayTwoFragment"
-            />
-    </fragment>
 
-    <fragment
-        android:id="@+id/displayTwoFragment"
-        android:label="fragment_display_two"
-        android:name="me.cpele.myapplication.DisplayTwoFragment"
-        tools:layout="@layout/fragment_display_two"
-        >
-        <action
-            android:id="@+id/action_displayTwoNext"
-            app:destination="@id/displayThreeFragment"
-            />
-    </fragment>
+        <fragment
+            android:id="@+id/displayOneFragment"
+            android:label="fragment_display_one"
+            android:name="me.cpele.myapplication.DisplayOneFragment"
+            tools:layout="@layout/fragment_display_one"
+            >
+            <action
+                android:id="@+id/action_displayOneNext"
+                app:destination="@id/displayTwoFragment"
+                />
+        </fragment>
 
-    <fragment
-        android:id="@+id/displayThreeFragment"
-        android:label="fragment_display_three"
-        android:name="me.cpele.myapplication.DisplayThreeFragment"
-        tools:layout="@layout/fragment_display_three"
-        />
+        <fragment
+            android:id="@+id/displayTwoFragment"
+            android:label="fragment_display_two"
+            android:name="me.cpele.myapplication.DisplayTwoFragment"
+            tools:layout="@layout/fragment_display_two"
+            >
+            <action
+                android:id="@+id/action_displayTwoNext"
+                app:destination="@id/displayThreeFragment"
+                />
+        </fragment>
+
+        <fragment
+            android:id="@+id/displayThreeFragment"
+            android:label="fragment_display_three"
+            android:name="me.cpele.myapplication.DisplayThreeFragment"
+            tools:layout="@layout/fragment_display_three"
+            />
+
+    </navigation>
 
 </navigation>
