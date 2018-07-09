@@ -2,6 +2,7 @@ package me.cpele.myapplication
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -32,5 +33,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreateOptionsMenu(menu)
         menuInflater?.inflate(R.menu.menu_main, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        navController.graph
+                .find { dest -> dest.id == item?.itemId }
+                ?.let { navController.navigate(it.id) }
+        return super.onOptionsItemSelected(item)
     }
 }
