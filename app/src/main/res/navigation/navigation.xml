@@ -19,6 +19,11 @@
             app:destination="@+id/displayDateFragment"
             />
 
+        <action
+            android:id="@+id/action_mainFragment_to_displayOneFragment"
+            app:destination="@id/displayOneFragment"
+            />
+
     </fragment>
 
     <fragment
@@ -29,11 +34,42 @@
         >
 
         <argument
+            android:defaultValue="Unknown"
             android:name="name"
             app:type="string"
-            android:defaultValue="Unknown"
             />
 
     </fragment>
+
+    <fragment
+        android:id="@+id/displayOneFragment"
+        android:label="fragment_display_one"
+        android:name="me.cpele.myapplication.DisplayOneFragment"
+        tools:layout="@layout/fragment_display_one"
+        >
+        <action
+            android:id="@+id/action_displayOneNext"
+            app:destination="@id/displayTwoFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/displayTwoFragment"
+        android:label="fragment_display_two"
+        android:name="me.cpele.myapplication.DisplayTwoFragment"
+        tools:layout="@layout/fragment_display_two"
+        >
+        <action
+            android:id="@+id/action_displayTwoNext"
+            app:destination="@id/displayThreeFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/displayThreeFragment"
+        android:label="fragment_display_three"
+        android:name="me.cpele.myapplication.DisplayThreeFragment"
+        tools:layout="@layout/fragment_display_three"
+        />
 
 </navigation>
