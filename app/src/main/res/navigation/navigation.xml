@@ -15,7 +15,7 @@
         >
 
         <action
-            android:id="@+id/main_action_next"
+            android:id="@+id/mainActionNext"
             app:destination="@+id/displayDateFragment"
             />
 
