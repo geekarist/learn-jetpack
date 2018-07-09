@@ -68,6 +68,9 @@
                 android:id="@+id/action_displayTwoNext"
                 app:destination="@id/displayThreeFragment"
                 />
+            <deepLink
+                app:uri="myapp://display-number-two"
+                />
         </fragment>
 
         <fragment
