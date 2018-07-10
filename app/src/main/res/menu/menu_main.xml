@@ -12,4 +12,9 @@
         android:id="@+id/displayNumbers"
         android:title="@string/menu_main_display_numbers"
         />
+
+    <item
+        android:id="@+id/action_home"
+        android:title="@string/menu_main_go_home"
+        />
 </menu>

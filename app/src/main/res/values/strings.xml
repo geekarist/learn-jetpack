@@ -7,4 +7,5 @@
     <string name="main_say_hello">Say hello</string>
     <string name="disp_date_current">It\'s %s</string>
     <string name="menu_main_display_numbers">Display numbers</string>
+    <string name="menu_main_go_home">Go home</string>
 </resources>

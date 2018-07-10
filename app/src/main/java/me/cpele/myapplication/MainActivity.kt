@@ -36,9 +36,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        navController.graph
-                .find { dest -> dest.id == item?.itemId }
-                ?.let { navController.navigate(it.id) }
+        val itemDest = navController.graph.find { dest -> dest.id == item?.itemId }
+
+        if (itemDest != null) {
+            navController.navigate(itemDest.id)
+        } else {
+            item?.itemId
+                    ?.let { itemId -> navController.graph.getAction(itemId) }
+                    ?.let { itemAction ->
+                        navController.navigate(itemAction.destinationId)
+                    }
+        }
+
         return super.onOptionsItemSelected(item)
     }
 }
